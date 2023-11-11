@@ -119,8 +119,8 @@ function resetValidation(key, value) {
 function handleInput(e) {
     try {
         const file = e.target.files[0];
+        form.avatar = "";
         if (! validateFile(file)) {
-            form.avatar = "";
             return;
         }
         
