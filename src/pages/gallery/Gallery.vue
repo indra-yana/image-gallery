@@ -120,6 +120,7 @@ function handleInput(e) {
     try {
         const file = e.target.files[0];
         if (! validateFile(file)) {
+            form.avatar = "";
             return;
         }
         
@@ -131,7 +132,7 @@ function handleInput(e) {
 }
 
 async function handleUpload() {
-    if (! validateFile(form.avatar)) {
+    if (! validateFile(form.avatar) || validation.avatar.length) {
         alert('Input tidak valid.');
         return;
     }
